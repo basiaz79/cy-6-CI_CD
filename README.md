@@ -18,9 +18,9 @@ The main goal was to make Github Actions Workflow, that initialize tests automat
 
     > npm package </br> [Link to package](https://www.npmjs.com/package/cypress)
 
-  - http-server
+- http-server
 
-    > npm package that runs simple http-server</br> [Link to package](https://www.npmjs.com/package/http-server)
+  > npm package that runs simple http-server</br> [Link to package](https://www.npmjs.com/package/http-server)
 
 ## <p align="center">Files info</p>
 
