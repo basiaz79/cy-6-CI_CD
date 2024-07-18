@@ -1,5 +1,4 @@
 describe('General httpbin API tests', () => {
-
   // Test for loading main httpbin page
   it('Get HTML main page', () => {
     cy.request('https://httpbin.org/').then((response) =>
@@ -19,7 +18,6 @@ describe('General httpbin API tests', () => {
 });
 
 describe('Requests formats tests', () => {
-  
   // Create baseURL address sting
   const baseURL = 'https://httpbin.org';
 
@@ -51,7 +49,7 @@ describe('Requests formats tests', () => {
       headers: {
         Accept: 'application/json',
       },
-      failOnStatusCode: false
+      failOnStatusCode: false,
     };
     cy.request(request).then((response) => {
       expect(response.headers).to.have.property('content-type');
@@ -68,7 +66,7 @@ describe('Requests formats tests', () => {
       headers: {
         Accept: 'application/xml',
       },
-      failOnStatusCode: false
+      failOnStatusCode: false,
     };
     cy.request(request).then((response) => {
       expect(response.headers).to.have.property('content-type');
@@ -86,7 +84,7 @@ describe('Cookies API tests', () => {
   // Test, that gets current active cookies
   it('Get list of current cookies', () => {
     cy.request(`${baseURL}/cookies`).then((response) => {
-      // Asserts that response is 200 'OK', as there is possibility to response have no cookies :c 
+      // Asserts that response is 200 'OK', as there is possibility to response have no cookies :c
       expect(response.body).to.have.ownProperty('cookies');
     });
   });
@@ -115,7 +113,7 @@ describe('Cookies API tests', () => {
       failOnStatusCode: false,
     };
     cy.request(request).then((response) => {
-      expect(response.body.cookies).to.not.have.property('freeform')
+      expect(response.body.cookies).to.not.have.property('freeform');
     });
   });
 });
@@ -318,3 +316,5 @@ describe('headers tests', () => {
     });
   });
 });
+
+// Cypress CI/CD workflow trigger
